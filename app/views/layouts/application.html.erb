@@ -3,20 +3,24 @@
 <head>
   <title>CityConnector</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  
+  <link href="https://fonts.googleapis.com/css?family=Gothic+A1|Open+Sans:400,400i,700,700i" rel="stylesheet">
     <%= javascript_include_tag "vendor/modernizr" %>
-  
-  <%= csrf_meta_tags %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_pack_tag    'application' %>
 </head>
 <body>
-  
+  <header class="row">
+    <h1 class="small-12 medium-12 large-12 columns">City Connector</h1>
+  </header>
+
   <nav class="top-bar">
-    <ul class="title-area">
+    <!-- <ul class="title-area">
       <li class="name">
-        <h1><a href="/">CityConnector</a></h1>
       </li>
-    </ul>
+    </ul> -->
 
     <section class="top-bar-section">
       <ul class="right">

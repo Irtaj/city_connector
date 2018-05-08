@@ -4,7 +4,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :name, null: false
       t.text :description, null: false
       t.string :website, null: false
-      t.string :type, null: false
+      t.string :category_comp, null: false
 
       t.string :street, null: false
       t.string :suite

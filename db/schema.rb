@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_234559) do
     t.string "name", null: false
     t.text "description", null: false
     t.string "website", null: false
-    t.string "type", null: false
+    t.string "category_comp", null: false
     t.string "street", null: false
     t.string "suite"
     t.string "city", null: false
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_234559) do
 
   create_table "resources", force: :cascade do |t|
     t.string "name", null: false
-    t.string "type", null: false
+    t.string "category_res", null: false
     t.boolean "needed"
     t.datetime "expire_date", null: false
     t.boolean "urgent", default: false
