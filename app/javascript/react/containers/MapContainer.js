@@ -7,9 +7,6 @@ class MapContainer extends Component {
     super(props)
     this.state ={
       location: '',
-      activeMarker:{}
-      // companyId: this.props.params.id,
-      // companies:[]
     }
     this.initMap=this.initMap.bind(this)
     this.callMap=this.callMap.bind(this)
@@ -28,7 +25,7 @@ class MapContainer extends Component {
       center: boston
     });
     let marker = new google.maps.Marker({
-      position: launch,
+      position: boston,
       map: map
     });
     fetch('/api/v1/companies')
@@ -58,8 +55,6 @@ class MapContainer extends Component {
     loadJS("https://maps.googleapis.com/maps/api/js?key=AIzaSyBVOiucn_VXeA0JPdH_sRXmJYVLarZ0Fik&callback=initMap")
     console.log("callMap works!");
   }
-
-
 
   // initialize() {
   //   let geocoder;
@@ -104,6 +99,5 @@ function loadJS(src) {
   script.async = true;
   ref.parentNode.insertBefore(script, ref);
 }
-
 
 // https://maps.googleapis.com/maps/api/geocode/json?address=77+Summer+Street,+Boston,+MA&key=AIzaSyBVOiucn_VXeA0JPdH_sRXmJYVLarZ0Fik
