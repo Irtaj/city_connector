@@ -8,7 +8,7 @@ const CompanyTile = props => {
       <div className="row">
         <p className="small-2 medium-2 large-2 columns" onClick={props.onClick}>Alerts</p>
         <p className="small-2 medium-2 large-2 columns"><Link to={`/companies/${props.id}`}>Profile</Link></p>
-        <p className="small-2 medium-2 large-8 columns" onClick={props.onClick}>Distance</p>
+        <p className="small-2 medium-2 large-2 columns" id="btn-distance" onClick={props.onClick}>Distance</p>
       </div>
     </div>
   )

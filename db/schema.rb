@@ -20,11 +20,7 @@ ActiveRecord::Schema.define(version: 2018_05_01_234559) do
     t.text "description", null: false
     t.string "website", null: false
     t.string "category_comp", null: false
-    t.string "street", null: false
-    t.string "suite"
-    t.string "city", null: false
-    t.string "state", null: false
-    t.integer "zip", null: false
+    t.string "address", null: false
     t.string "mn_phone"
     t.string "mn_email"
     t.boolean "verified", default: false

@@ -6,11 +6,7 @@ class CreateCompanies < ActiveRecord::Migration[5.2]
       t.string :website, null: false
       t.string :category_comp, null: false
 
-      t.string :street, null: false
-      t.string :suite
-      t.string :city, null: false
-      t.string :state, null: false
-      t.integer :zip, null: false
+      t.string :address, null: false
 
       t.string :mn_phone
       t.string :mn_email

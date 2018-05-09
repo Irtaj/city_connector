@@ -3,9 +3,7 @@ class Company < ApplicationRecord
   validates :description, presence: true
   validates :website, presence: true
   validates :category_comp, presence: true
-  validates :street, presence: true
-  validates :city, presence: true
-  validates :zip, presence: true
+  validates :address, presence: true
 
   has_many :users
   has_many :resources

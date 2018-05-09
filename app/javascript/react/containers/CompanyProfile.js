@@ -38,21 +38,15 @@ class CompanyProfile extends React.Component{
       <div className="row">
         <div className="small-4 medium-4 large-4 columns company-profile-info">
           <h3>{this.state.company.name}</h3>
-            <p className="edit-company-info">(Edit Company Info)</p>
-            <p>Location:</p>
-            <ul>
-              <li>{this.state.company.street}, {this.state.company.suite}</li>
-              <li>{this.state.company.city}, {this.state.company.state} {this.state.company.zip}</li>
-            </ul>
-            <p>Phone: {this.state.company.phone}</p>
-            <p>Email: {this.state.company.email}</p>
+            <p className="edit-info">(Edit Company Info)</p>
+            <p id="address"><b>Location:</b> {this.state.company.address}</p>
+            <p><b>Phone:</b> {this.state.company.mn_phone}</p>
+            <p><b>Email:</b> {this.state.company.mn_email}</p>
           <h4>Profile</h4>
             <p>{this.state.company.description}</p>
-          <h4>Services</h4>
           <h4>Employees</h4>
-
         </div>
-        <div className="small-8 medium-8 large-8 columns">
+        <div className="small-7 medium-7 large-7 columns">
           <div className="company-alerts">
             Alerts & chat box goes here
           </div>
