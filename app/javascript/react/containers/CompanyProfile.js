@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from "react";
+import CompanyFormContainer from './CompanyFormContainer';
 
-class CompanyProfile extends React.Component{
+class CompanyProfile extends Component{
   constructor(props){
     super(props);
     this.state={
@@ -52,6 +53,7 @@ class CompanyProfile extends React.Component{
           </div>
           <div className="company-edit-form">
             Company editing form goes here
+            <CompanyFormContainer/>
           </div>
         </div>
       </div>

@@ -65,7 +65,7 @@ class CompanyList extends Component{
     //         address={company.address}
     //       />
     //     )
-    // }) 
+    // })
 
     return(
       <div className="row">

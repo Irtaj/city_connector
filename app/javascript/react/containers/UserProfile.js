@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { Component } from "react";
+import CompanyFormContainer from './CompanyFormContainer';
 
-class UserProfile extends React.Component{
+class UserProfile extends Component{
   constructor(props){
     super(props);
     this.state={
       user: {},
-      user_id: this.props.params.id
+      userId:'',
+      userId:this.props.params.id
     }
   }
 
   componentDidMount(){
-    let user_id = this.state.user_id
-    fetch(`/api/v1/users/${userId}}`)
+    let userId = this.state.userId
+    fetch(`/api/v1/users/${userId}`)
       .then(response => {
         if (response.ok) {
           return response;
@@ -25,6 +27,7 @@ class UserProfile extends React.Component{
       .then(body => {
         this.setState({
           user: body.user,
+          userId: body.user_id
         });
       })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -34,22 +37,22 @@ class UserProfile extends React.Component{
 
     return (
       <div className="row">
-        <div className="small-4 medium-4 large-4 columns company-profile-info">
+        <div className="small-4 medium-4 large-4 columns user-profile-info">
           <h3>{this.state.user.name}</h3>
-            <p className="edit-info">(Edit Personal Info)</p>
-            <p><b>Location:</b> {this.state.user.street}, {this.state.company.city}, {this.state.company.state} {this.state.company.zip}</p>
+            <p className="edit-info">(Edit User Info)</p>
+            <p id="address"><b>Location:</b> {this.state.user.address}</p>
             <p><b>Phone:</b> {this.state.user.mn_phone}</p>
             <p><b>Email:</b> {this.state.user.mn_email}</p>
-          <h4>Profile</h4>
-            <p>{this.state.company.description}</p>
-          <h4>Employees</h4>
+          <h4>Company</h4>
+            <p>{this.state.user.company_id.name}</p>
+
         </div>
         <div className="small-7 medium-7 large-7 columns">
-          <div className="company-alerts">
+          <div className="user-alerts">
             Alerts & chat box goes here
           </div>
-          <div className="company-edit-form">
-            Company editing form goes here
+          <div className="user-edit-form">
+            User editing form goes here
           </div>
         </div>
       </div>
@@ -57,4 +60,4 @@ class UserProfile extends React.Component{
   }
 }
 
-export default CompanyProfile;
+export default UserProfile;
