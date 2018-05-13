@@ -65,18 +65,32 @@ ul .top-bar-section{
   height: 100%;
 }
 
-.search-bar{
-  background-color: #55b8ae;
-}
-
+/* CompanyTile */
 .company-list{
   background-color: #ffffff;
 }
 
+/* .companyListDescrip{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0
+} */
+
 #btn-distance{
   float: left;
 }
+/* Search Bar */
+.search-bar{
+  background-color: #55b8ae;
+}
 
+.searchTyping{
+  padding-left: 10px;
+  padding-bottom: 15px;
+  text-overflow: ellipsis;
+  max-width: 100px
+}
 /* Company Profile */
 .edit-info{
   font-style: italic;

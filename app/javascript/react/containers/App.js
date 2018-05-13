@@ -8,6 +8,7 @@ const App = (props) => {
   return (
     <Router history={browserHistory}>
       <Route path='/' component={CompanyList} />
+      <Route path='/?' component={CompanyList} />
       <Route path='/companies' component={CompanyList} />
       <Route path='/companies/:id' component={CompanyProfile} />
     </Router>

@@ -7,7 +7,6 @@ class MapContainer extends Component {
     super(props)
     this.state ={
       companies: [],
-      companyAddressHash: {}
     }
     this.initMap=this.initMap.bind(this)
     this.callMap=this.callMap.bind(this)
@@ -15,7 +14,7 @@ class MapContainer extends Component {
 
   componentDidMount(){
     this.callMap()
-    console.log("componentDidMount works!");
+    console.log("MapContainer componentDidMount works!");
   }
 
   callMap(){
@@ -58,6 +57,7 @@ class MapContainer extends Component {
         this.state.companyAddresses.forEach(mapCompany => {
           locations.push([{name: mapCompany.name}, {lat: mapCompany.lat, lng: mapCompany.lng}])
         });
+
         let markers = []
         locations.forEach(location => {
           let marker = new google.maps.Marker({
