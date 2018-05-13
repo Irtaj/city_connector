@@ -81,15 +81,31 @@ ul .top-bar-section{
   float: left;
 }
 /* Search Bar */
-.search-bar{
-  background-color: #55b8ae;
-}
 
 .searchTyping{
   padding-left: 10px;
   padding-bottom: 15px;
   text-overflow: ellipsis;
   max-width: 100px
+}
+
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+    max-width: 90%;
+    height: 3rem;
+    float: left;
+    font-size: 1.2rem;
+}
+
+.btn-seach-submit{
+  max-width: 30%;
+  height: 3rem;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #55b8ae;
+  padding-left: 15px;
+  padding-right: 15px
+
+
 }
 /* Company Profile */
 .edit-info{

@@ -80,7 +80,7 @@ class CompanyList extends Component{
             <MapContainer />
         </div>
         <div className="small-6 medium-5 large-5 columns">
-          <div className="search-bar">
+          <div>
             <SearchBar/>
           </div>
           <h4> Member Companies:</h4>
