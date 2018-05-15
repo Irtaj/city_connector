@@ -9,6 +9,7 @@ class CompanyProfile extends Component{
       userId:'',
       companyId: this.props.params.id
     }
+
   }
 
   componentDidMount(){
@@ -38,22 +39,26 @@ class CompanyProfile extends Component{
     return (
       <div className="row">
         <div className="small-4 medium-4 large-4 columns company-profile-info">
-          <h3>{this.state.company.name}</h3>
-            <p className="edit-info">(Edit Company Info)</p>
-            <p id="address"><b>Location:</b> {this.state.company.address}</p>
-            <p><b>Phone:</b> {this.state.company.mn_phone}</p>
-            <p><b>Email:</b> {this.state.company.mn_email}</p>
-          <h4>Profile</h4>
-            <p>{this.state.company.description}</p>
-          <h4>Employees</h4>
+          <div>
+            <h3>{this.state.company.name}</h3>
+              <p className="edit-info">(Edit Company Info)</p>
+              <p id="address"><b>Location:</b> {this.state.company.address}</p>
+              <p><b>Phone:</b> {this.state.company.mn_phone}</p>
+              <p><b>Email:</b> {this.state.company.mn_email}</p>
+            <h4>Profile</h4>
+              <p>{this.state.company.description}</p>
+            <h4>Employees</h4>
+          </div>
         </div>
         <div className="small-7 medium-7 large-7 columns">
           <div className="company-alerts">
             Alerts & chat box goes here
           </div>
           <div className="company-edit-form">
-            Company editing form goes here
-            <CompanyFormContainer/>
+            <h4 className="company-edit-form-heading">To edit your company information, please fill the form below.</h4>
+            <CompanyFormContainer
+              addCompany={this.addCompany}
+            />
           </div>
         </div>
       </div>

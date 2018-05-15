@@ -11,4 +11,5 @@ class User < ApplicationRecord
 
   belongs_to :company
   has_many :resources
+  has_many :messges
 end

@@ -22,14 +22,3 @@ document.addEventListener('DOMContentLoaded', () => {
     )
   }
 })
-
-document.addEventListener('DOMContentLoaded', () => {
-  let reactElement = document.getElementById('user')
-
-  if (reactElement) {
-    ReactDOM.render(
-      <AppUser />,
-      reactElement
-    )
-  }
-})

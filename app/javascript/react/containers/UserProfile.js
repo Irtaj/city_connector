@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CompanyFormContainer from './CompanyFormContainer';
+import UserFormContainer from './UserFormContainer';
 
 class UserProfile extends Component{
   constructor(props){
@@ -9,6 +9,7 @@ class UserProfile extends Component{
       userId:'',
       userId:this.props.params.id
     }
+  this.editUser = this.editUser.bind(this)
   }
 
   componentDidMount(){
@@ -33,6 +34,10 @@ class UserProfile extends Component{
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
+  editUser(){
+
+  }
+
   render(){
 
     return (
@@ -45,6 +50,12 @@ class UserProfile extends Component{
             <p><b>Email:</b> {this.state.user.mn_email}</p>
           <h4>Company</h4>
             <p>{this.state.user.company_id.name}</p>
+          <div>
+            <p className="button primary">Find a Company</p>
+            <p className="button primary">Submit a Resource Request</p>
+            <p className="button primary">Offer a Resource </p>
+            <p className="button primary">Edit Company Information</p>
+          </div>
 
         </div>
         <div className="small-7 medium-7 large-7 columns">
@@ -52,7 +63,10 @@ class UserProfile extends Component{
             Alerts & chat box goes here
           </div>
           <div className="user-edit-form">
-            User editing form goes here
+            <h4 className="company-edit-form-heading">To edit your account information, please fill the form below.</h4>
+            <UserFormContainer
+              editUser={this.editUser}
+            />
           </div>
         </div>
       </div>

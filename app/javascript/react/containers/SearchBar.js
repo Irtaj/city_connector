@@ -92,9 +92,8 @@ class SearchBar extends Component{
     return(
     <div>
     <form onSubmit={this.handleSubmit}>
-      <label>
+      <label className = "search-field">
         <input
-          className = "search-field"
           placeholder = "Search Companies..."
           type="text"
           value={this.state.value}
@@ -107,8 +106,9 @@ class SearchBar extends Component{
           value = 'Submit'
         />
     </form>
-      Results
+    <div className="search-results">
       {finalQueries}
+    </div>
     </div>
     )
   }

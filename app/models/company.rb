@@ -1,5 +1,5 @@
 class Company < ApplicationRecord
-  acts_as_mappable
+  # acts_as_mappable
 
   validates :name, presence: true
   validates :description, presence: true
