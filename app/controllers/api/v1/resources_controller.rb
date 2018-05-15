@@ -1,0 +1,27 @@
+class Api::V1::ResourcesController < ApplicationController
+  skip_before_action :verify_authenticity_token
+
+def index
+  render json: Resource.all
+end
+
+def create
+  @review = Review.new(name: review_params[:name], body: review_params[:body], rating: review_params[:rating], place_id: review_params[:place_id], user_id: current_user.id)
+
+  if current_user
+    resource.review = current_user
+  else
+    resource.user_id = 1
+  end
+
+  if resource.save
+    render json: Resource.all
+  else
+    render json: {"Your request for a resource did not save."}
+  end
+
+  def review_params
+    params.require(:review).permit(:resource, :company_id)
+  end
+
+end
