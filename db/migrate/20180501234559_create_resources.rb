@@ -5,7 +5,7 @@ class CreateResources < ActiveRecord::Migration[5.2]
       t.string :category_res, null: false
 
       t.boolean :needed
-      t.datetime :expire_date, null: false
+      t.datetime :expire_date
       t.boolean :urgent, :default => false
 
       t.belongs_to :user

@@ -9,7 +9,8 @@ class User < ApplicationRecord
   validates :email, presence: :true, uniqueness: { case_sensitive: false }
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
 
-  belongs_to :company
+  belongs_to :company,
+    optional: true
   has_many :resources
   has_many :messges
 end

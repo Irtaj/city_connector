@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2018_05_15_102828) do
     t.string "name", null: false
     t.string "category_res", null: false
     t.boolean "needed"
-    t.datetime "expire_date", null: false
+    t.datetime "expire_date"
     t.boolean "urgent", default: false
     t.bigint "user_id"
     t.bigint "company_id"
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 2018_05_15_102828) do
     t.datetime "updated_at", null: false
     t.string "first_name", null: false
     t.string "last_name", null: false
-    t.string "title", null: false
+    t.string "title"
     t.boolean "admin", default: false
-    t.string "username", null: false
+    t.string "username"
     t.bigint "company_id"
     t.index ["company_id"], name: "index_users_on_company_id"
     t.index ["email"], name: "index_users_on_email", unique: true

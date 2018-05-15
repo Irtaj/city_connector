@@ -74,6 +74,7 @@ class CompanyList extends Component{
       <div className="row">
         <div className="small-8 medium-5 large-6 columns clearfix ">
           <MapContainer/>
+          <h4>Alerts:</h4>
           <ResourceList/>
         </div>
         <div className="small-4 medium-7 large-6 columns">
@@ -81,7 +82,7 @@ class CompanyList extends Component{
             <div>
               <SearchBar/>
             </div>
-            <h4 className="member-list-h4"> Member Companies</h4>
+            <h4 className="member-list-h4"> Member Companies:</h4>
             <div className="company-list">
               <ul>
                 {companies}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import UserFormContainer from './UserFormContainer';
+// import UserFormContainer from './UserFormContainer';
 
 class UserProfile extends Component{
   constructor(props){
@@ -9,7 +9,7 @@ class UserProfile extends Component{
       userId:'',
       userId:this.props.params.id
     }
-  this.editUser = this.editUser.bind(this)
+  // this.editUser = this.editUser.bind(this)
   }
 
   componentDidMount(){
@@ -34,22 +34,22 @@ class UserProfile extends Component{
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  editUser(){
-
-  }
+  // editUser(){
+  //
+  // }
 
   render(){
 
     return (
       <div className="row">
         <div className="small-4 medium-4 large-4 columns user-profile-info">
-          <h3>{this.state.user.name}</h3>
+          <h3>{this.state.user.first_name} {this.state.user.last_name}</h3>
             <p className="edit-info">(Edit User Info)</p>
             <p id="address"><b>Location:</b> {this.state.user.address}</p>
             <p><b>Phone:</b> {this.state.user.mn_phone}</p>
             <p><b>Email:</b> {this.state.user.mn_email}</p>
           <h4>Company</h4>
-            <p>{this.state.user.company_id.name}</p>
+            <p>{this.state.user.company_id}</p>
           <div>
             <p className="button primary">Find a Company</p>
             <p className="button primary">Submit a Resource Request</p>
@@ -64,9 +64,7 @@ class UserProfile extends Component{
           </div>
           <div className="user-edit-form">
             <h4 className="company-edit-form-heading">To edit your account information, please fill the form below.</h4>
-            <UserFormContainer
-              editUser={this.editUser}
-            />
+
           </div>
         </div>
       </div>

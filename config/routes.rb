@@ -5,13 +5,14 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :companies
-      resources :users do
+      resources :companies do
         resources :resources
       end
+      resources :users
     end
   end
 
     resources :companies, only: [:new, :create, :show]
+    resources :resources
     resources :users
 end

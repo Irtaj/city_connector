@@ -14,11 +14,11 @@ class Api::V1::CompaniesController < ApplicationController
 
   def create
     company = Company.new(name: company_params[:name], category_comp: company_params[:category_comp], description: company_params[:description], website: company_params[:website], address: company_params[:address], lat: company_params[:lat], lng: company_params[:lng])
-
-    geo=MultiGeocoder.geocode(company_params[:address])
-    new_attributes=company_params
-    new_attributes[:lat]=geo.lat
-    new_attributes[:lng]=geo.lng
+    #
+    # geo=MultiGeocoder.geocode(company_params[:address])
+    # new_attributes=company_params
+    # new_attributes[:lat]=geo.lat
+    # new_attributes[:lng]=geo.lng
 
     # binding.pry
     # if !current_user

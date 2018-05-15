@@ -10,13 +10,21 @@ class Company < ApplicationRecord
   has_many :users
   has_many :resources
 
-  before_validation :geocode_address, :on => :create
+  before_validation :geocode_address
 
+  #before_validation
+  #validation
+  #after_validation
+  #save
   private
-  def geocode_address
+  def geocode_new_address
     geo = Geokit::Geocoders::MultiGeocoder.geocode(address)
     errors.add(:address, "Could not Geocode address") if !geo.success
     self.lat, self.lng = geo.lat,geo.lng if geo.success
+  end
+  
+  def geocode_address
+    geocode_new_address if address_changed?
   end
 
   # def combined_address

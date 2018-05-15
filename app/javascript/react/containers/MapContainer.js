@@ -19,7 +19,7 @@ class MapContainer extends Component {
 
   callMap(){
     window.initMap = this.initMap
-    loadJS("https://maps.googleapis.com/maps/api/js?key=AIzaSyAGZ4Sow6GQVU8E1qNdazpeq8kEUTxQmag&callback=initMap")
+    loadJS("https://maps.googleapis.com/maps/api/js?key=AIzaSyC668sqglnHBxF-VWPbu3FYTzQfdmXzu2k&callback=initMap")
     console.log("callMap works!");
   }
 
