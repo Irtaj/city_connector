@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+import { Link } from 'react-router';
+import ResourceFormContainer from './ResourceFormContainer';
 // import UserFormContainer from './UserFormContainer';
+import CompanyFormContainer from './UserFormContainer';
 
 class UserProfile extends Component{
   constructor(props){
@@ -7,9 +10,17 @@ class UserProfile extends Component{
     this.state={
       user: {},
       userId:'',
-      userId:this.props.params.id
+      userId:this.props.params.id,
+      // profileFormShow: false,
+      resourceFormShow: false,
+      companyFormShow: false,
+
     }
-  // this.editUser = this.editUser.bind(this)
+  this.showResourceForm = this.showResourceForm.bind(this)
+  this.showCompanyForm = this.showCompanyForm.bind(this)
+
+  this.handleClickResourceForm = this.handleClickResourceForm.bind(this)
+  this.handleClickCompanyForm = this.handleClickCompanyForm.bind(this)
   }
 
   componentDidMount(){
@@ -34,27 +45,114 @@ class UserProfile extends Component{
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  // editUser(){
-  //
+  // showProfileForm(){
+  //   if (this.state.profileFormShow == false) {
+  //     return null;
+  //   }else{
+  //     return(
+  //       <div>
+  //         <h4>Edit Your Profile</h4>
+  //         <UserFormContainer />
+  //       </div>
+  //     )
+  //   }
   // }
 
+  showResourceForm(){
+    if (this.state.resourceFormShow == false) {
+      return null;
+    }else{
+      return(
+        <div>
+          <h4>Submit a Resource Request</h4>
+          <ResourceFormContainer />
+        </div>
+      )
+    }
+  }
+
+  showCompanyForm(){
+    if (this.state.companyFormShow == false) {
+      return null;
+    }else{
+      return(
+        <div>
+          <h4>Add Your Company To Our Database</h4>
+          <CompanyFormContainer />
+        </div>
+      )
+    }
+  }
+
+  // handleClickProfileForm(){
+  //   if (this.state.profileFormShow){
+  //     this.setState({profileFormShow: false})
+  //   } else {
+  //     this.setState({
+  //       profileFormShow: true,
+  //       resourceFormShow: false,
+  //       companyFormShow: false
+  //     })
+  //   }
+  // }
+
+  handleClickResourceForm(){
+    if (this.state.resourceFormShow){
+      this.setState({resourceFormShow: false})
+    } else {
+      this.setState({
+        // profileFormShow: false,
+        resourceFormShow: true,
+        companyFormShow: false
+      })
+    }
+  }
+
+  handleClickCompanyForm(){
+    if (this.state.companyFormShow){
+      this.setState({companyFormShow: false})
+    } else {
+      this.setState({
+        // profileFormShow: false,
+        resourceFormShow: false,
+        companyFormShow: true
+      })
+    }
+  }
+
   render(){
+    let userCompanyField;
+    if (this.state.user.company_id != '0'){
+      userCompanyField= this.state.user.company_id
+    }else{
+      userCompanyField= "No company on file."
+    }
+
+    let userEmailField;
+    if (this.state.user.mn_email != null){
+      userEmailField= this.state.user.mn_email
+    }else{
+      userEmailField= "No email on file."
+    }
+
+    let userTitleField;
+    if (this.state.user.mn_phone != null){
+      userTitleField= this.state.user.mn_phone
+    }else{
+      userTitleField= "No phone number on file."
+    }
+
 
     return (
       <div className="row">
         <div className="small-4 medium-4 large-4 columns user-profile-info">
           <h3>{this.state.user.first_name} {this.state.user.last_name}</h3>
-            <p className="edit-info">(Edit User Info)</p>
-            <p id="address"><b>Location:</b> {this.state.user.address}</p>
-            <p><b>Phone:</b> {this.state.user.mn_phone}</p>
-            <p><b>Email:</b> {this.state.user.mn_email}</p>
-          <h4>Company</h4>
-            <p>{this.state.user.company_id}</p>
-          <div>
-            <p className="button primary">Find a Company</p>
-            <p className="button primary">Submit a Resource Request</p>
-            <p className="button primary">Offer a Resource </p>
-            <p className="button primary">Edit Company Information</p>
+            <p><b>Phone:</b> {userTitleField}</p>
+            <p><b>Email:</b> {userEmailField}</p>
+            <p><b>Company:</b> {userCompanyField}</p>
+          <div className="row">
+            <div className="button round btn-forms" onClick={this.handleClickResourceForm}>Submit Resource Request</div>
+            <div className="button round btn-forms" onClick={this.handleClickCompanyForm}>Add Company To Database</div>
           </div>
 
         </div>
@@ -62,9 +160,10 @@ class UserProfile extends Component{
           <div className="user-alerts">
             Alerts & chat box goes here
           </div>
-          <div className="user-edit-form">
-            <h4 className="company-edit-form-heading">To edit your account information, please fill the form below.</h4>
+          <div>
 
+            {this.showResourceForm()}
+            {this.showCompanyForm()}
           </div>
         </div>
       </div>

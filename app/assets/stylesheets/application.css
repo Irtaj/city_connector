@@ -54,7 +54,7 @@ h1, h2, h3, h4, p, li, a{
 .top-bar{
   border: none;
   padding-bottom: 85px;
-  background-image: url("images/connectionvectors.jpg");
+  background-image: url("connectionvectors.jpg");
 
 }
 
@@ -185,3 +185,10 @@ const style = {
   width: '100%',
   height: '100%'
 } */
+
+/* UserProfile */
+.btn-forms{
+  margin-right: 25px;
+  margin-left: 25px;
+  width: 280px;
+}

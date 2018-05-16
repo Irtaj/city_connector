@@ -1,4 +1,3 @@
-class ResourceController < ActionController
-  def index
-  end
+class ResourcesController < ApplicationController
+  def index; end
 end
