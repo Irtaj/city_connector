@@ -13,5 +13,182 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
-
  */
+
+ .clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.row{
+  max-width: 100%
+}
+
+h1{
+  text-decoration: none;
+  font-size: 50px;
+  font-weight: bold;
+  color: black
+}
+
+h1 a{
+  text-decoration: none;
+  color: #5889b2;
+}
+/* Body */
+body{
+  font-family: 'Open Sans', sans-serif, 'Gothic A1', sans-serif;
+  background-color: #f3f8f7;
+
+}
+
+h1, h2, h3, h4, p, li, a{
+  font-family: 'Open Sans', sans-serif, 'Gothic A1', sans-serif;
+}
+
+/* Nav Bar */
+.top-bar{
+  border: none;
+  padding-bottom: 85px;
+  background-image: url("connectionvectors.jpg");
+
+}
+
+ul .top-bar-section{
+  background-color: #ffffff;
+  border: none;
+}
+
+.top-bar-section ul li > a{
+  font-size: 20px;
+}
+
+#btn-login{
+  padding-top: 10%;
+  background-color: transparent;
+}
+
+/*  CompanyList */
+.map{
+  background-color: #83ad21;
+  padding: 35%;
+}
+
+#map {
+  background-color: grey;
+  height: 80%;
+}
+
+.wrp-list-search{
+  background-color: #76bcf5;
+  padding: 25px;
+}
+
+.member-list-h4{
+  padding-top: 25px;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+}
+/* CompanyTile */
+.company-list{
+  background-color: rgb(255, 252, 193);
+  margin-top: 30px;
+}
+
+.company-list-h3{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.company-list-actions p{
+  font-size: 18px;
+}
+
+/* .companyListDescrip{
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0
+} */
+
+#btn-distance{
+  float: left;
+}
+/* Search Bar */
+.search-field{
+  width: 86%;
+  min-width: 70px;
+}
+
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+    height: 3rem;
+    float: left;
+    font-size: 20px;
+}
+
+.btn-seach-submit{
+  width: 100px;
+  height: 47px;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #5889b2;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: 5px
+
+}
+
+.search-results{
+  background-color: #ffffff;
+  padding-left: 18px;
+  margin-top: 25px;
+}
+
+/* Company Profile */
+.edit-info{
+  font-style: italic;
+}
+.company-profile-info{
+  background-color: #ffffff;
+  margin-left: 5%;
+  padding-top: 25px;
+}
+
+.company-alerts{
+  background-color: #76bcf5;
+  padding: 5%;
+  margin-right: 5%;
+}
+
+.company-edit-form{
+  background-color: rgb(255, 252, 193);
+  margin-top: 2%;
+  padding: 30px;
+  margin-right: 5%
+}
+
+.company-edit-form-heading{
+  text-align: center;
+}
+input:not([type]), input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea {
+  height: none;
+  float: disabled;
+  max-width: none;
+}
+/*
+const style = {
+  width: '100%',
+  height: '100%'
+} */
+
+/* UserProfile */
+.btn-forms{
+  margin-right: 25px;
+  margin-left: 25px;
+  width: 280px;
+}
