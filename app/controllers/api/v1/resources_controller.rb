@@ -1,27 +1,25 @@
 class Api::V1::ResourcesController < ApplicationController
-  skip_before_action :verify_authenticity_token
+  protect_from_forgery unless: -> { request.format.json? }
 
-def index
-  render json: Resource.all
-end
-
-def create
-  @review = Review.new(name: review_params[:name], body: review_params[:body], rating: review_params[:rating], place_id: review_params[:place_id], user_id: current_user.id)
-
-  if current_user
-    resource.review = current_user
-  else
-    resource.user_id = 1
+  def index
+    render json: Resource.where(company_id: params[:id])
   end
 
-  if resource.save
-    render json: Resource.all
-  else
-    render json: {"Your request for a resource did not save."}
+  def create
+    @resource = Resource.new(name: resource_params[:name], category_res: resource_params[:category_res], user_id: current_user.id)
+
+    if @resource.save!
+      flash[:notice] = "Resource request added successfully!"
+      render json: @resource
+    else
+      render json: {"Your request for a resource did not save."}
+    end
   end
 
-  def review_params
-    params.require(:review).permit(:resource, :company_id)
+  private
+
+  def resource_params
+    params.require(:resource).permit(:name, :category_res, :company_id)
   end
 
 end

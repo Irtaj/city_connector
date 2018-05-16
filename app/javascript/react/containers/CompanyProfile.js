@@ -35,30 +35,22 @@ class CompanyProfile extends Component{
   }
 
   render(){
-
+    let emailField;
+    if (this.state.company.mn_email != null){
+      emailField= this.state.company.mn_email
+    }else{
+      emailField= "No company email on file."
+    }
     return (
       <div className="row">
-        <div className="small-4 medium-4 large-4 columns company-profile-info">
+        <div className="small-11 medium-11 large-11 columns company-profile-info">
           <div>
             <h3>{this.state.company.name}</h3>
-              <p className="edit-info">(Edit Company Info)</p>
               <p id="address"><b>Location:</b> {this.state.company.address}</p>
               <p><b>Phone:</b> {this.state.company.mn_phone}</p>
-              <p><b>Email:</b> {this.state.company.mn_email}</p>
+              <p><b>Email:</b> {emailField}</p>
             <h4>Profile</h4>
               <p>{this.state.company.description}</p>
-            <h4>Employees</h4>
-          </div>
-        </div>
-        <div className="small-7 medium-7 large-7 columns">
-          <div className="company-alerts">
-            Alerts & chat box goes here
-          </div>
-          <div className="company-edit-form">
-            <h4 className="company-edit-form-heading">To edit your company information, please fill the form below.</h4>
-            <CompanyFormContainer
-              addCompany={this.addCompany}
-            />
           </div>
         </div>
       </div>

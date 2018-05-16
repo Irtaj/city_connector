@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
+import ResourceName from '../components/ResourceName';
+import ResourceCategory from '../components/ResourceCategory';
+import ResourceExpire from '../components/ResourceExpire';
 
-class ResourcerFormContainer extends Component {
+class ResourceFormContainer extends Component {
   constructor(props){
     super(props)
     this.state={
       name: '',
       category_res: '',
       expire_date: '',
-      needed: false,
-      urgent: false
+      // needed: false,
+      // urgent: false
     }
   this.handleName = this.handleName.bind(this);
   this.handleCategory = this.handleCategory.bind(this);

@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   end
 
     resources :companies, only: [:new, :create, :show]
-    resources :resources
+    # resources :resources, only: [:new, :create]
     resources :users
 end

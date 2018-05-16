@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from 'react-router';
 import ResourceFormContainer from './ResourceFormContainer';
-// import UserFormContainer from './UserFormContainer';
+import UserFormContainer from './UserFormContainer';
 import CompanyFormContainer from './UserFormContainer';
 
 class UserProfile extends Component{
@@ -11,14 +11,16 @@ class UserProfile extends Component{
       user: {},
       userId:'',
       userId:this.props.params.id,
-      // profileFormShow: false,
+      profileFormShow: false,
       resourceFormShow: false,
       companyFormShow: false,
 
     }
+  this.showProfileForm = this.showProfileForm.bind(this)
   this.showResourceForm = this.showResourceForm.bind(this)
   this.showCompanyForm = this.showCompanyForm.bind(this)
 
+  this.handleClickProfileForm = this.handleClickProfileForm.bind(this)
   this.handleClickResourceForm = this.handleClickResourceForm.bind(this)
   this.handleClickCompanyForm = this.handleClickCompanyForm.bind(this)
   }
@@ -45,18 +47,18 @@ class UserProfile extends Component{
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-  // showProfileForm(){
-  //   if (this.state.profileFormShow == false) {
-  //     return null;
-  //   }else{
-  //     return(
-  //       <div>
-  //         <h4>Edit Your Profile</h4>
-  //         <UserFormContainer />
-  //       </div>
-  //     )
-  //   }
-  // }
+  showProfileForm(){
+    if (this.state.profileFormShow == false) {
+      return null;
+    }else{
+      return(
+        <div>
+          <h4>Edit Your Profile</h4>
+          <UserFormContainer />
+        </div>
+      )
+    }
+  }
 
   showResourceForm(){
     if (this.state.resourceFormShow == false) {
@@ -84,24 +86,24 @@ class UserProfile extends Component{
     }
   }
 
-  // handleClickProfileForm(){
-  //   if (this.state.profileFormShow){
-  //     this.setState({profileFormShow: false})
-  //   } else {
-  //     this.setState({
-  //       profileFormShow: true,
-  //       resourceFormShow: false,
-  //       companyFormShow: false
-  //     })
-  //   }
-  // }
+  handleClickProfileForm(){
+    if (this.state.profileFormShow){
+      this.setState({profileFormShow: false})
+    } else {
+      this.setState({
+        profileFormShow: true,
+        resourceFormShow: false,
+        companyFormShow: false
+      })
+    }
+  }
 
   handleClickResourceForm(){
     if (this.state.resourceFormShow){
       this.setState({resourceFormShow: false})
     } else {
       this.setState({
-        // profileFormShow: false,
+        profileFormShow: false,
         resourceFormShow: true,
         companyFormShow: false
       })
@@ -113,7 +115,7 @@ class UserProfile extends Component{
       this.setState({companyFormShow: false})
     } else {
       this.setState({
-        // profileFormShow: false,
+        profileFormShow: false,
         resourceFormShow: false,
         companyFormShow: true
       })
@@ -151,6 +153,7 @@ class UserProfile extends Component{
             <p><b>Email:</b> {userEmailField}</p>
             <p><b>Company:</b> {userCompanyField}</p>
           <div className="row">
+            <div className="button round btn-forms" onClick={this.handleClickProfileForm}>Edit Your Profile</div>
             <div className="button round btn-forms" onClick={this.handleClickResourceForm}>Submit Resource Request</div>
             <div className="button round btn-forms" onClick={this.handleClickCompanyForm}>Add Company To Database</div>
           </div>
@@ -161,7 +164,7 @@ class UserProfile extends Component{
             Alerts & chat box goes here
           </div>
           <div>
-
+            {this.showProfileForm()}
             {this.showResourceForm()}
             {this.showCompanyForm()}
           </div>
