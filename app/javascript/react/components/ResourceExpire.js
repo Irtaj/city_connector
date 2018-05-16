@@ -4,7 +4,7 @@ const ResourceExpire = (props) => {
   return(
     <div>
       <label>
-        {props.label}
+        {props.label}:
       </label>
       <textarea
         name={props.name}

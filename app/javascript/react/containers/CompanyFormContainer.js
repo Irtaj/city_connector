@@ -11,7 +11,7 @@ class CompanyFormContainer extends Component {
   constructor(props){
     super(props)
     this.state={
-      category_comp: '1',
+      category_comp: '0',
       name: '',
       description: '',
       website: '',
@@ -28,6 +28,7 @@ class CompanyFormContainer extends Component {
   this.handleEmail = this.handleEmail.bind(this);
 
   this.addCompany = this.addCompany.bind(this)
+  this.successAlert = this.successAlert.bind(this)
   // this.handleFormSubmit = this.handleFormSubmit.bind(this)
   this.handleClear = this.handleClear.bind(this);
   }
@@ -131,13 +132,14 @@ class CompanyFormContainer extends Component {
         newCompany: '' });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
+    this.handleClear(event)
     console.log("addCompany works");
   }
 
   handleClear(event) {
     // event.preventDefault()
     this.setState({
-      category_comp: '1',
+      category_comp: '0',
       name: '',
       description: '',
       website: '',
@@ -198,14 +200,14 @@ class CompanyFormContainer extends Component {
           <CompanyNumber
             label="Phone"
             handlePhone={this.handlePhone}
-            phone={this.state.phone}
+            mn_phone={this.state.mn_phone}
           />
         </div>
         <div>
           <CompanyEmail
             label="Email"
             handleEmail={this.handleEmail}
-            email={this.state.email}
+            mn_email={this.state.mn_email}
           />
         </div>
         <input className="button" type="submit" value="Submit" />

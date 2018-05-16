@@ -2,24 +2,29 @@ class Api::V1::ResourcesController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
 
   def index
-    render json: Resource.where(company_id: params[:id])
+    render json: Resource
   end
 
   def create
-    @resource = Resource.new(name: resource_params[:name], category_res: resource_params[:category_res], user_id: current_user.id)
+    resource = Resource.new(name: resource_params[:name], category_res: resource_params[:category_res], expire_date: resource_params[:expire_date], description: resource_params[:description])
 
-    if @resource.save!
-      flash[:notice] = "Resource request added successfully!"
-      render json: @resource
-    else
-      render json: {"Your request for a resource did not save."}
-    end
+    # binding.pry
+    # if !current_user
+    #   render json: { "errors": "You must be logged in"}
+    # else
+      if resource.save!
+        flash[:notice] = "Resource added successfully!"
+        render json: {resource: resource}
+      else
+        flash[:notice] = @resource.errors.full_messages.join(", ")
+      end
+    # end
   end
 
-  private
+private
 
-  def resource_params
-    params.require(:resource).permit(:name, :category_res, :company_id)
-  end
+def resource_params
+  params.require(:resource).permit(:name, :category_res, :expire_date, :description)
+end
 
 end

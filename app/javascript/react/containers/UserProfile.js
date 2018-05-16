@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from 'react-router';
 import ResourceFormContainer from './ResourceFormContainer';
 // import UserFormContainer from './UserFormContainer';
-import CompanyFormContainer from './UserFormContainer';
+import CompanyFormContainer from './CompanyFormContainer';
 
 class UserProfile extends Component{
   constructor(props){
