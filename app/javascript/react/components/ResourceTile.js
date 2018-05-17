@@ -13,11 +13,11 @@ const ResourceTile = (props) => {
     }
 
   return (
-    <div>
-     TEST RESOURCETILE
-      {resourcesNeeded}
-      {urgentNotice}
-    </div>
+      <ul>
+        <li>{props.category}</li>
+        <li>{props.name}</li>
+        <li>{props.description}</li>
+      </ul>
   )
 }
 

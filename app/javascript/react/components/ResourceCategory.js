@@ -6,7 +6,7 @@ const ResourceCategory = (props) => {
       <label>
         {props.label}
       </label>
-      <select onChange={props.handleCategory} value={props.category_comps}>
+      <select onChange={props.handleCategory} value={props.category_res}>
         <option value={0}> </option>
         <option value={1}>Clothing</option>
         <option value={2}>Food Pantry</option>
