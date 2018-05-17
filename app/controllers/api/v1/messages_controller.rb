@@ -19,4 +19,7 @@ class Api::V1::MessagesController < Api::ApiController
   # end
 
   # DEFUNCT CODE FROM ANOTHER AGE
+  def show
+    @messages = Message.all
+  end
 end
