@@ -28,7 +28,7 @@ class CompanyFormContainer extends Component {
   this.handleEmail = this.handleEmail.bind(this);
 
   this.addCompany = this.addCompany.bind(this)
-  this.successAlert = this.successAlert.bind(this)
+  // this.successAlert = this.successAlert.bind(this)
   // this.handleFormSubmit = this.handleFormSubmit.bind(this)
   this.handleClear = this.handleClear.bind(this);
   }

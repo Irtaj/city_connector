@@ -8,7 +8,7 @@ const ResourceExpire = (props) => {
       </label>
       <textarea
         name={props.name}
-        type='text'
+        type='dateFormat'
         value={props.name}
         onChange={props.handleName}
       />

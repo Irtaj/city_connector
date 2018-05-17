@@ -5,9 +5,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :companies
-      resources :resources
+      resources :companies do
+
+      end
       resources :users
+      resources :resources
     end
   end
 

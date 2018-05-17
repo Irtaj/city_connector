@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ResourceName from '../components/ResourceName';
 import ResourceCategory from '../components/ResourceCategory';
-import ResourceExpire from '../components/ResourceExpire';
+// import ResourceExpire from '../components/ResourceExpire';
 import ResourceDescription from '../components/ResourceDescription';
 
 class ResourceFormContainer extends Component {
@@ -10,16 +10,17 @@ class ResourceFormContainer extends Component {
     this.state={
       name: '',
       category_res: '0',
-      expire_date: '',
+      // expire_date: '',
       description: ''
       // needed: false,
       // urgent: false
     }
   this.handleName = this.handleName.bind(this);
   this.handleCategory = this.handleCategory.bind(this);
-  this.handleExpire = this.handleExpire.bind(this);
+  // this.handleExpire = this.handleExpire.bind(this);
   this.handleDescription = this.handleDescription.bind(this);
 
+this.callFetch=this.callFetch.bind(this);
   this.addResource = this.addResource.bind(this)
   // this.handleFormSubmit = this.handleFormSubmit.bind(this)
   this.handleClear = this.handleClear.bind(this);
@@ -37,18 +38,17 @@ class ResourceFormContainer extends Component {
       console.log("handleCategory works");
   }
 
-  handleExpire(event) {
-    let newExpire = event.target.value
-      this.setState({ expire_date: newExpire })
-      console.log("handleExpire works");
-  }
+  // handleExpire(event) {
+  //   let newExpire = event.target.value
+  //     this.setState({ expire_date: newExpire })
+  //     console.log("handleExpire works");
+  // }
 
   handleDescription(event) {
     let newDescription = event.target.value
       this.setState({description: newDescription })
       console.log("handleDescription works");
   }
-
   addResource(event) {
     event.preventDefault();
     // debugger;
@@ -56,16 +56,64 @@ class ResourceFormContainer extends Component {
       resource: {
         name: this.state.name,
         category_res: this.state.category_res,
-        expire_date: this.state.expire_date,
+        // expire_date: this.state.expire_date,
         description: this.state.description
       }
     };
+
+    this.callFetch(formPayload);
+    this.handleClear(event)
+    console.log("addResource works");
+  }
+
+  // addResource(event) {
+  //   event.preventDefault();
+  //   // debugger;
+  //   let formPayload = {
+  //     resource: {
+  //       name: this.state.name,
+  //       category_res: this.state.category_res,
+  //       expire_date: this.state.expire_date,
+  //       description: this.state.description
+  //     }
+  //   };
+  //   fetch(`/api/v1/resources.json`, {
+  //     credentials: 'same-origin',
+  //     method: 'POST',
+  //     body: JSON.stringify(formPayload),
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     '  Accept': 'application/json'
+  //     }
+  //   })
+  //   .then(response => {
+  //       if (response.ok) {
+  //         return response;
+  //       } else {
+  //         let errorMessage = `${response.status} (${response.statusText})`,
+  //             error = new Error(errorMessage);
+  //         throw(error);
+  //       }
+  //     })
+  //     .then(response => response.json())
+  //     .then(body => {
+  //       this.setState({ resource: body.resource.text,
+  //       newResource: '' });
+  //     })
+  //     .catch(error => console.error(`Error in fetch: ${error.message}`));
+  //   console.log("addResource works");
+  //   this.handleClear(event)
+  // }
+
+  callFetch(formPayload){
+
     fetch(`/api/v1/resources.json`, {
       credentials: 'same-origin',
       method: 'POST',
       body: JSON.stringify(formPayload),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        // 'Accept': 'application/json'
       }
     })
     .then(response => {
@@ -83,8 +131,6 @@ class ResourceFormContainer extends Component {
         newResource: '' });
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
-    console.log("addResource works");
-    this.handleClear(event)
   }
 
   handleClear(event) {
@@ -92,7 +138,7 @@ class ResourceFormContainer extends Component {
     this.setState({
       name: '',
       category_res: '0',
-      expire_date: '',
+      // expire_date: '',
       description: ''
     })
     console.log("handleClear works");
@@ -129,13 +175,7 @@ class ResourceFormContainer extends Component {
             category_res={this.state.category_res}
           />
         </div>
-        <div>
-          <ResourceExpire
-            label="Expiration Date"
-            handleExpire={this.handleExpire}
-            expire_date={this.state.expire_date}
-          />
-        </div>
+
         <div>
           <ResourceDescription
             label="Description"
