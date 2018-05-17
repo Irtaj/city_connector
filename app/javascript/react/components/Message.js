@@ -1,12 +1,9 @@
 import React from 'react';
-import { railsAssetImagePath } from '../constants/railsAssetImagePath';
 
-
-const Message = ({ handle, message, icon }) => {
+const Message = ({ username, message }) => {
   return(
     <p>
-      <img src={railsAssetImagePath(`chat_image_${icon}`)} width="40"/>
-      <strong> {handle}: </strong>
+      <strong> {username}: </strong>
       {message}
     </p>
   );

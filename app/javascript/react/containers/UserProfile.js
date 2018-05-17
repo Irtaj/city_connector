@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import ResourceFormContainer from './ResourceFormContainer';
 // import UserFormContainer from './UserFormContainer';
 import CompanyFormContainer from './CompanyFormContainer';
+import ChatContainer from './ChatContainer';
 
 class UserProfile extends Component{
   constructor(props){
@@ -159,6 +160,7 @@ class UserProfile extends Component{
         <div className="small-7 medium-7 large-7 columns">
           <div className="user-alerts">
             Alerts & chat box goes here
+            <ChatContainer />
           </div>
           <div>
 
