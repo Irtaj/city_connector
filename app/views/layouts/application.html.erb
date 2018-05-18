@@ -12,6 +12,7 @@
     <%= javascript_pack_tag    'application' %>
 </head>
 <body>
+  <div class="inner-body">
   <nav class="top-bar row">
     <h1 class="small-3 medium-4 large-4 columns title"><%= link_to('CityConnector', '/') %></h1>
     <section class="top-bar-section small-7 medium-7 large-7 columns clearfix">
@@ -39,5 +40,6 @@
 
   <%= javascript_include_tag 'application' %>
   <%= yield :extra_footer %>
+</div>
 </body>
 </html>
