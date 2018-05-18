@@ -10,18 +10,18 @@ App.chat = App.cable.subscriptions.create("ChatChannel", {
   received: function(data) {
     // Called when there's incoming data on the websocket for this channel
      // new Notification data["user"], body: data["body"]
-     alert data['message']
+     // alert data['message']
   }
 
-  list: (message) ->
-    @perform 'list', message: message
+  // list: (message) ->
+  //   @perform 'list', message: message
 
-
-  $(document).on 'keypress', '[data-behavior~= room_list]', (event) ->
-    if event.keyCode is 13 # return = send
-    App.room.list.event.target.value
-    event.target.value =''
-    event.preventDefault()
+  // 
+  // $(document).on 'keypress', '[data-behavior~= room_list]', (event) ->
+  //   if event.keyCode is 13 # return = send
+  //   App.room.list.event.target.value
+  //   event.target.value =''
+  //   event.preventDefault()
 
 
 });

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Message from '../components/Message';
 import TextFieldWithSubmit from '../components/TextFieldWithSubmit';
+// import MessageList from './MessageList';
 
 class ChatContainer extends Component {
   constructor(props) {

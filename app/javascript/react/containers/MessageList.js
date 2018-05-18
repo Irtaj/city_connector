@@ -1,16 +1,16 @@
 import React, { Component } from "react";
-import ResourceTile from '../components/ResourceTile';
+// import MessageHistoryTile from '../components/MessageHistoryTile';
 
-class ResourceList extends Component{
+class MessageList extends Component{
   constructor(props){
     super(props);
     this.state = {
-      resources:[],
+      messages:[],
     }
   }
 
   componentDidMount(){
-    fetch('/api/v1/resources')
+    fetch('/api/v1/messages')
       .then(response => {
         if (response.ok){
           return response;
@@ -23,24 +23,21 @@ class ResourceList extends Component{
       .then(response => response.json())
       .then(body => {
         this.setState({
-          resources: body,
+          messages: body,
         });
       })
       .catch(error => console.error(`Error in ${error.message}`));
   }
 
   render(){
-    let resources = this.state.resources.map(resource => {
+    let messages = this.state.resources.map(message => {
 
       return(
-        <ResourceTile
+        <MessageHistoryTile
           key={resource.id}
           id={resource.id}
-          name={resource.name}
-          category={resource.category_res}
-          needed={resource.needed}
-          description={resource.description}
-          expire={resource.expire_date}
+          body={resource.body}
+          current_user={current_user}
         />
       )
     })
@@ -48,7 +45,7 @@ class ResourceList extends Component{
     return(
       <div>
         <ul>
-          {resources}
+          {messages}
         </ul>
       </div>
     )
@@ -56,4 +53,4 @@ class ResourceList extends Component{
 }
 
 
-export default ResourceList;
+export default MessageList;

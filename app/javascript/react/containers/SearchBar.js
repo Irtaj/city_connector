@@ -10,7 +10,6 @@ class SearchBar extends Component{
       value: '',
       finalQueries: []
     }
-    // this.handleSearch = this.handleSearch.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
   }
@@ -31,18 +30,6 @@ class SearchBar extends Component{
           companies: body,
         });
 
-        // let searchableData = []
-        // let formattedAllData = []
-        // let companies = this.state.companies.map(company => {
-        //   searchableData.push({name: company.name, description: company.description, category: company.category_comp})
-        // })
-        // this.setState({formattedAllData: searchableData})
-        //
-        // let searches = []
-        // this.state.formattedAllData.forEach(search => {
-        //   searches.push([{name: search.name, description: search.description, category: search.category_comp}])
-        // });
-        // console.log(searches);
       })
       .catch(error => console.error(`Error in ${error.message}`));
   console.log("SearchBar componentDidMount works!");
@@ -55,7 +42,7 @@ class SearchBar extends Component{
   }
 
   handleSubmit(event) {
-    alert('A search was submitted: ' + this.state.value);
+    // alert('A search was submitted: ' + this.state.value);
     event.preventDefault();
     let companyResult = {
       value: this.state.value
@@ -73,11 +60,7 @@ class SearchBar extends Component{
       this.setState({ finalQueries: queryResults })
     })
   }
-  //
-  // handleSearch(event){
-  //   console.log(event.target.value)
-  // {this.props.queriedInfo}
-  // }
+
   render(){
     let finalQueries = this.state.finalQueries.map(company => {
   return(
@@ -101,7 +84,6 @@ class SearchBar extends Component{
         />
       </label>
         <input
-          className="btn-seach-submit"
           type = 'submit'
           value = 'Submit'
         />

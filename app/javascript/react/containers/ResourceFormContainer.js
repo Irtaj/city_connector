@@ -20,7 +20,7 @@ class ResourceFormContainer extends Component {
   // this.handleExpire = this.handleExpire.bind(this);
   this.handleDescription = this.handleDescription.bind(this);
 
-this.callFetch=this.callFetch.bind(this);
+  this.callFetch=this.callFetch.bind(this);
   this.addResource = this.addResource.bind(this)
   // this.handleFormSubmit = this.handleFormSubmit.bind(this)
   this.handleClear = this.handleClear.bind(this);
@@ -160,7 +160,7 @@ this.callFetch=this.callFetch.bind(this);
 
   render(){
     return(
-      <form onSubmit={this.addResource}>
+      <form onSubmit={this.addResource} className="forms-imported">
         <div>
           <ResourceName
             label="Name:"
@@ -185,7 +185,7 @@ this.callFetch=this.callFetch.bind(this);
         </div>
 
         <input className="button" type="submit" value="Submit" />
-        <button className="button" type="button" onClick={this.handleClear}>Clear</button>
+        <button className="button btn-clear" type="button" onClick={this.handleClear}>Clear</button>
       </form>
     )
   }

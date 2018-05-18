@@ -13,7 +13,7 @@ class UserProfile extends Component{
       userId:'',
       userId:this.props.params.id,
       // profileFormShow: false,
-      resourceFormShow: false,
+      resourceFormShow: true,
       companyFormShow: false,
 
     }
@@ -146,26 +146,31 @@ class UserProfile extends Component{
 
     return (
       <div className="row">
-        <div className="small-4 medium-4 large-4 columns user-profile-info">
-          <h3>{this.state.user.first_name} {this.state.user.last_name}</h3>
-            <p><b>Phone:</b> {userTitleField}</p>
-            <p><b>Email:</b> {userEmailField}</p>
-            <p><b>Company:</b> {userCompanyField}</p>
-          <div className="row">
-            <div className="button round btn-forms" onClick={this.handleClickResourceForm}>Submit Resource Request</div>
-            <div className="button round btn-forms" onClick={this.handleClickCompanyForm}>Add Company To Database</div>
+        <div className="small-5 medium-5 large-5 columns user-profile-info">
+          <div className="lft-user-profile">
+            <h3>{this.state.user.first_name} {this.state.user.last_name}</h3>
+              <p><b>Phone:</b> {userTitleField}</p>
+              <p><b>Email:</b> {userEmailField}</p>
+              <p><b>Company:</b> {userCompanyField}</p>
+            <div className="row both-form-btn">
+              <div className="button round btn-forms" onClick={this.handleClickResourceForm}>Submit Resource Request</div>
+              <div className="button round btn-forms" onClick={this.handleClickCompanyForm}>Add Company To Database</div>
+            </div>
           </div>
-
         </div>
-        <div className="small-7 medium-7 large-7 columns">
-          <div className="user-alerts">
-            Alerts & chat box goes here
-            <ChatContainer />
-          </div>
-          <div>
-
-            {this.showResourceForm()}
-            {this.showCompanyForm()}
+        <div className="small-7 medium-7 large-7 columns right-user-profile">
+          <div className="rgt-user-profile">
+            <div className="user-alerts">
+              <ChatContainer />
+            </div>
+            <div className="forms">
+              <div className="form-resources">
+                {this.showResourceForm()}
+              </div>
+              <div className="form-companies">
+                {this.showCompanyForm()}
+              </div>
+            </div>
           </div>
         </div>
       </div>

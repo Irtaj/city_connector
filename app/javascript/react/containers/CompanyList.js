@@ -74,8 +74,8 @@ class CompanyList extends Component{
       <div className="row">
         <div className="small-8 medium-5 large-6 columns lft-company-list">
           <MapContainer/>
-          <h4>Alerts:</h4>
           <div className='wrp-alerts'>
+            <h4>Alerts:</h4>
             <ResourceList/>
           </div>
         </div>
@@ -85,7 +85,7 @@ class CompanyList extends Component{
           </div>
           <div className="wrp-list">
             <h4 className="member-list-h4"> Member Companies:</h4>
-            <div className="company-list">
+            <div>
               <ul>
                 {companies}
               </ul>

@@ -97,6 +97,7 @@ class CompanyFormContainer extends Component {
 
   addCompany(event) {
     event.preventDefault();
+
     // debugger;
     let formPayload = {
       company: {
@@ -134,6 +135,8 @@ class CompanyFormContainer extends Component {
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     this.handleClear(event)
     console.log("addCompany works");
+    // alert('Company submission was successful!');
+
   }
 
   handleClear(event) {
@@ -160,7 +163,7 @@ class CompanyFormContainer extends Component {
 
   render(){
     return(
-      <form onSubmit={this.addCompany}>
+      <form onSubmit={this.addCompany} className="forms-imported">
         <div>
           <CompanyName
             label="Name:"
@@ -211,7 +214,7 @@ class CompanyFormContainer extends Component {
           />
         </div>
         <input className="button" type="submit" value="Submit" />
-        <button className="button" onClick={this.handleClear}>Clear</button>
+        <button className="button btn-clear" onClick={this.handleClear}>Clear</button>
       </form>
     )
   }

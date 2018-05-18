@@ -62,7 +62,7 @@ class MapContainer extends Component {
         locations.forEach(location => {
           let marker = new google.maps.Marker({
             position: location[1],
-            label: location[0].name
+            // label: location[0].name
           });
           markers.push(marker)
           marker.setMap(this.map)

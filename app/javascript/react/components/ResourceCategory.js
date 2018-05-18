@@ -8,11 +8,11 @@ const ResourceCategory = (props) => {
       </label>
       <select onChange={props.handleCategory} value={props.category_res}>
         <option value={0}> </option>
-        <option value={1}>Clothing</option>
-        <option value={2}>Food Pantry</option>
-        <option value={3}>Legal</option>
-        <option value={4}>Shelters</option>
-        <option value={5}>Transportation</option>
+        <option value={1}>Clothing Supplies</option>
+        <option value={2}>Food Supplies</option>
+        <option value={3}>Legal Aid</option>
+        <option value={4}>Shelter</option>
+        <option value={5}>Transportation Services</option>
       </select>
     </div>
   )

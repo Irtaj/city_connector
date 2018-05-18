@@ -43,15 +43,13 @@ class CompanyProfile extends Component{
     }
     return (
       <div className="row">
-        <div className="small-11 medium-11 large-11 columns company-profile-info">
-          <div>
-            <h3>{this.state.company.name}</h3>
+        <div className="small-10 medium-10 large-10 columns company-profile-info">
+            <h3 className="company-name-profile">{this.state.company.name}</h3>
               <p id="address"><b>Location:</b> {this.state.company.address}</p>
               <p><b>Phone:</b> {this.state.company.mn_phone}</p>
               <p><b>Email:</b> {emailField}</p>
             <h4>Profile</h4>
               <p>{this.state.company.description}</p>
-          </div>
         </div>
       </div>
     )
