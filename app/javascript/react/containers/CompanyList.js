@@ -72,18 +72,20 @@ class CompanyList extends Component{
 
     return(
       <div className="row">
-        <div className="small-8 medium-5 large-6 columns clearfix ">
+        <div className="small-8 medium-5 large-6 columns lft-company-list">
           <MapContainer/>
-          <h4>Alerts:</h4>
-          <ResourceList/>
+          <div className='wrp-alerts'>
+            <h4>Alerts:</h4>
+            <ResourceList/>
+          </div>
         </div>
-        <div className="small-4 medium-7 large-6 columns">
-          <div className="wrp-list-search">
-            <div>
-              <SearchBar/>
-            </div>
+        <div className="small-4 medium-7 large-6 columns rgt-company-list">
+          <div className="search-bar">
+            <SearchBar/>
+          </div>
+          <div className="wrp-list">
             <h4 className="member-list-h4"> Member Companies:</h4>
-            <div className="company-list">
+            <div>
               <ul>
                 {companies}
               </ul>
