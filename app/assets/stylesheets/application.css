@@ -383,9 +383,6 @@ label{
   margin-top: 25px;
 }
 
-/* Sign Up */
-
-
 /* Sign In */
 .log-in{
   margin-left: 100px;
@@ -393,5 +390,3 @@ label{
   padding: 25px;
   background-color: rgba(255,255,255, .6);
 }
-
-/* Sign Out */
