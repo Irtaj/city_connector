@@ -175,7 +175,7 @@ h1{
     }
 
     .wrp-list h3:hover{
-      background-color: rgba(255,242,176);
+      background-color: rgb(255,242,176);
     }
 
   /* Search Bar */
@@ -184,7 +184,7 @@ h1{
     margin-right: 80px;
   }
   input[type=text]{
-    background-color: rgba(255,242,176);
+    background-color: rgb(255,242,176);
     font-family: 'Maven Pro', sans-serif;
   }
 
@@ -210,12 +210,12 @@ h1{
     }
 
   input[type=text]:hover{
-    background-color: rgba(255,242,176);
+    background-color: rgb(255,242,176);
     font-family: 'Maven Pro', sans-serif;
   }
 
   textarea:hover {
-    background-color: rgba(255,242,176);
+    background-color: rgb(255,242,176);
   }
 
   .search-field{
@@ -236,7 +236,7 @@ h1{
   }
 
   input[type=submit]:hover{
-    background-color: rgba(255,242,176);
+    background-color: rgb(255,242,176);
     color: black;
   }
 
@@ -367,7 +367,7 @@ input:not([type]), input[type="text"], input[type="password"], input[type="date"
 }
 
 .btn-clear:hover{
-  background-color: rgba(255,242,176);
+  background-color: rgb(255,242,176);
   color: black;
 }
 
