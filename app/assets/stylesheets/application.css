@@ -58,7 +58,7 @@ h1{
 
   .inner-body{
     width: auto;
-    background: image-url('city.jpg');
+    background-image: url('city.jpg');
   }
 
   h1 a{
