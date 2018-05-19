@@ -56,14 +56,14 @@ h1{
     background-size: contain;
   } */
 
-  .inner-body{
+  /* .inner-body{
     width: auto;
     background: image-url("city.jpg") no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-  }
+  } */
 
   h1 a{
     padding-left: 30px;
