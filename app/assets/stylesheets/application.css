@@ -52,8 +52,17 @@ h1{
     width: auto;
     background-image: url("city.jpg");
     height: 100%;
-    background-size: contain
+    padding-bottom: 100%;
+    background-size: contain;
+  }
 
+  .inner-body{
+    width: auto;
+    background: image-url("city.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
 
   h1 a{
@@ -184,7 +193,6 @@ h1{
     margin-right: 80px;
   }
   input[type=text]{
-    background-color: rgb(255,242,176);
     font-family: 'Maven Pro', sans-serif;
   }
 
@@ -266,11 +274,9 @@ h1{
 }
 .company-profile-info{
   background-color: rgba(255,255,255, .95);
-  margin-left: 100px;
-  margin-right: 100px;
+  margin-left: 90px;
   padding-top: 25px;
   padding-bottom: 25px;
-  width: 70%;
 }
 
 .company-alerts{
@@ -385,8 +391,18 @@ label{
 
 /* Sign In */
 .log-in{
-  margin-left: 100px;
-  margin-right: 50px;
+  margin-left: 150px;
+  margin-right: 100px;
   padding: 25px;
   background-color: rgba(255,255,255, .6);
+}
+
+input[type=password]:hover{
+  background-color: rgb(255,242,176);
+  font-family: 'Maven Pro', sans-serif;
+}
+
+input[type=email]:hover{
+  background-color: rgb(255,242,176);
+  font-family: 'Maven Pro', sans-serif;
 }
