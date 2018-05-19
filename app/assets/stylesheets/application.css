@@ -48,13 +48,13 @@ h1{
   }
 
 /* Inner Body */
-  .inner-body{
+  /* .inner-body{
     width: auto;
     background-image: url("city.jpg");
     height: 100%;
     padding-bottom: 100%;
     background-size: contain;
-  }
+  } */
 
   .inner-body{
     width: auto;
