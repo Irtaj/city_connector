@@ -33,26 +33,6 @@ class CompanyFormContainer extends Component {
   this.handleClear = this.handleClear.bind(this);
   }
 
-  // handleChange(event) {
-  //   let newName = event.target.value
-  //   let newCategory = event.target.value
-  //   let newDescription = event.target.value
-  //   let newWebsite = event.target.value
-  //   let newAddress = event.target.value
-  //   let newPhone = event.target.value
-  //   let newEmail = event.target.value
-  //     this.setState({
-  //       [name]: newName
-  //       [category_comp]: newCategory
-  //       [description]: newDescription
-  //       [website]: newWebsite
-  //       [address]: newAddress
-  //       [mn_phone]: newPhone
-  //       [mn_email]: newEmail
-  //     })
-  //     console.log("handleChange works");
-  // }
-
   handleName(event) {
     let newName = event.target.value
       this.setState({ name: newName })
@@ -98,7 +78,6 @@ class CompanyFormContainer extends Component {
   addCompany(event) {
     event.preventDefault();
 
-    // debugger;
     let formPayload = {
       company: {
         name: this.state.name,
@@ -140,7 +119,6 @@ class CompanyFormContainer extends Component {
   }
 
   handleClear(event) {
-    // event.preventDefault()
     this.setState({
       category_comp: '0',
       name: '',
@@ -152,14 +130,6 @@ class CompanyFormContainer extends Component {
     })
     console.log("handleClear works");
   }
-
-  // handleFormSubmit(event) {
-  //   // event.preventDefault()
-
-  //   }
-  //   this.addCompany(formPayload)
-  //   this.handleClear()
-  // }
 
   render(){
     return(

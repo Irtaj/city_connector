@@ -55,5 +55,4 @@ class ResourceList extends Component{
   }
 }
 
-
 export default ResourceList;

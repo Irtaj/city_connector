@@ -9,7 +9,6 @@ class CompanyProfile extends Component{
       userId:'',
       companyId: this.props.params.id
     }
-
   }
 
   componentDidMount(){

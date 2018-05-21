@@ -11,7 +11,6 @@ class ChatContainer extends Component {
       messages: [],
       message: ''
     }
-
     this.handleMessageReceipt = this.handleMessageReceipt.bind(this);
     this.handleClearForm = this.handleClearForm.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -35,18 +34,14 @@ class ChatContainer extends Component {
     })
 
     App.chatChannel = App.cable.subscriptions.create(
-      // Info that is sent to the subscribed method
       {
         channel: "ChatChannel",
         chat_id: 1
-        // If you had router, you could do:
-        // chat_id: this.props.params["id"]
       },
       {
         connected: () => console.log("ChatChannel connected"),
         disconnected: () => console.log("ChatChannel disconnected"),
         received: data => {
-          // Data broadcasted from the chat channel
           console.log(data)
           this.handleMessageReceipt(data)
         }
@@ -67,7 +62,6 @@ class ChatContainer extends Component {
     let prepMessage = this.state.message
     let user_info = this.state.user
 
-    // Send info to the receive method on the back end
     App.chatChannel.send({
      message: prepMessage,
      user: user_info

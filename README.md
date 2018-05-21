@@ -4,25 +4,58 @@
 
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+City Connector is a platform for companies to connect with one another via chat and also post requests for the resources that are needed.
 
-Things you may want to cover:
+* The Homepage:
 
-* Ruby version
+  A user may view the list of companies that are already in the database. Their locations are reflected as markers in the map, which pulls in Google's map APIs.
 
-* System dependencies
+  Previous alerts for resources that have been entered by previous users are also visible.
 
-* Configuration
+  A company can be searched with the search bar on top of the homepage.
 
-* Database creation
+* Company Show Page:
 
-* Database initialization
+  To access the show page for each company, a user may click on the company name.
 
-* How to run the test suite
+  The show page reflects the company information a user has submitted to the database.
 
-* Services (job queues, cache servers, search engines, etc.)
+* User's Profile Page (only visible upon signing up/logging in):
 
-* Deployment instructions
+  A user has access to their user profile page, through a link on top of the homepage.
 
-* ...
+  The user's profile page gives the user access to submit a request for resources or submit a new form.
+
+  User's can also chat with one another, regarding any resource they may need, through the chat bar on top of the user profile page. The chat bar is implemented through Action Cable. This is a current feature that I am currently developing. The end product will allow a user to subscribe to multiple chat rooms depending on the resources they need to communicate about.
+
+* Under the Hood:
+
+  - Ruby version 2.3.3
+  - PostgreSQL as the database for Active Record
+  - RSPEC and Capybara for testing
+
+  - Foundation for HTML Layout
+
+  - Geokit to translate an address to Latitude and Longitude coordinates
+  - Google's Map APIs
+
+  - Action Cable for the chat functionalities
+  - Redis adapter to run Action Cable in production
+
+* Image Credit:
+
+  The city background (city.jpg) is originally by Phil Desforges on Unsplash.com.
+
+* Articles:
+
+  The articles and git repositories that helped most with the Action Cable chat feature:
+
+    - Using Action Cable with React, by Dakota Lillie https://medium.com/@dakota.lillie/using-action-cable-with-react-c37df065f296
+
+    - koacksel, by nwalberts
+    https://github.com/nwalberts/koacksel
+
+  The git repositories that helped most with the Google Maps feature
+
+    - ride-ferox, by AL6981
+    https://github.com/AL6981/ride-ferox

@@ -12,16 +12,14 @@ class UserProfile extends Component{
       user: {},
       userId:'',
       userId:this.props.params.id,
-      // profileFormShow: false,
       resourceFormShow: true,
       companyFormShow: false,
 
     }
-  this.showResourceForm = this.showResourceForm.bind(this)
-  this.showCompanyForm = this.showCompanyForm.bind(this)
-
-  this.handleClickResourceForm = this.handleClickResourceForm.bind(this)
-  this.handleClickCompanyForm = this.handleClickCompanyForm.bind(this)
+  this.showResourceForm = this.showResourceForm.bind(this);
+  this.showCompanyForm = this.showCompanyForm.bind(this);
+  this.handleClickResourceForm = this.handleClickResourceForm.bind(this);
+  this.handleClickCompanyForm = this.handleClickCompanyForm.bind(this);
   }
 
   componentDidMount(){
@@ -45,19 +43,6 @@ class UserProfile extends Component{
       })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-
-  // showProfileForm(){
-  //   if (this.state.profileFormShow == false) {
-  //     return null;
-  //   }else{
-  //     return(
-  //       <div>
-  //         <h4>Edit Your Profile</h4>
-  //         <UserFormContainer />
-  //       </div>
-  //     )
-  //   }
-  // }
 
   showResourceForm(){
     if (this.state.resourceFormShow == false) {
@@ -84,18 +69,6 @@ class UserProfile extends Component{
       )
     }
   }
-
-  // handleClickProfileForm(){
-  //   if (this.state.profileFormShow){
-  //     this.setState({profileFormShow: false})
-  //   } else {
-  //     this.setState({
-  //       profileFormShow: true,
-  //       resourceFormShow: false,
-  //       companyFormShow: false
-  //     })
-  //   }
-  // }
 
   handleClickResourceForm(){
     if (this.state.resourceFormShow){
@@ -142,7 +115,6 @@ class UserProfile extends Component{
     }else{
       userTitleField= "No phone number on file."
     }
-
 
     return (
       <div className="row">

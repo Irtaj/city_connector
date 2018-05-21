@@ -10,19 +10,14 @@ class ResourceFormContainer extends Component {
     this.state={
       name: '',
       category_res: '0',
-      // expire_date: '',
       description: ''
-      // needed: false,
-      // urgent: false
     }
   this.handleName = this.handleName.bind(this);
   this.handleCategory = this.handleCategory.bind(this);
-  // this.handleExpire = this.handleExpire.bind(this);
   this.handleDescription = this.handleDescription.bind(this);
 
   this.callFetch=this.callFetch.bind(this);
-  this.addResource = this.addResource.bind(this)
-  // this.handleFormSubmit = this.handleFormSubmit.bind(this)
+  this.addResource = this.addResource.bind(this);
   this.handleClear = this.handleClear.bind(this);
   }
 
@@ -38,12 +33,6 @@ class ResourceFormContainer extends Component {
       console.log("handleCategory works");
   }
 
-  // handleExpire(event) {
-  //   let newExpire = event.target.value
-  //     this.setState({ expire_date: newExpire })
-  //     console.log("handleExpire works");
-  // }
-
   handleDescription(event) {
     let newDescription = event.target.value
       this.setState({description: newDescription })
@@ -51,12 +40,10 @@ class ResourceFormContainer extends Component {
   }
   addResource(event) {
     event.preventDefault();
-    // debugger;
     let formPayload = {
       resource: {
         name: this.state.name,
         category_res: this.state.category_res,
-        // expire_date: this.state.expire_date,
         description: this.state.description
       }
     };
@@ -66,45 +53,6 @@ class ResourceFormContainer extends Component {
     console.log("addResource works");
   }
 
-  // addResource(event) {
-  //   event.preventDefault();
-  //   // debugger;
-  //   let formPayload = {
-  //     resource: {
-  //       name: this.state.name,
-  //       category_res: this.state.category_res,
-  //       expire_date: this.state.expire_date,
-  //       description: this.state.description
-  //     }
-  //   };
-  //   fetch(`/api/v1/resources.json`, {
-  //     credentials: 'same-origin',
-  //     method: 'POST',
-  //     body: JSON.stringify(formPayload),
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     '  Accept': 'application/json'
-  //     }
-  //   })
-  //   .then(response => {
-  //       if (response.ok) {
-  //         return response;
-  //       } else {
-  //         let errorMessage = `${response.status} (${response.statusText})`,
-  //             error = new Error(errorMessage);
-  //         throw(error);
-  //       }
-  //     })
-  //     .then(response => response.json())
-  //     .then(body => {
-  //       this.setState({ resource: body.resource.text,
-  //       newResource: '' });
-  //     })
-  //     .catch(error => console.error(`Error in fetch: ${error.message}`));
-  //   console.log("addResource works");
-  //   this.handleClear(event)
-  // }
-
   callFetch(formPayload){
 
     fetch(`/api/v1/resources.json`, {
@@ -113,7 +61,6 @@ class ResourceFormContainer extends Component {
       body: JSON.stringify(formPayload),
       headers: {
         'Content-Type': 'application/json',
-        // 'Accept': 'application/json'
       }
     })
     .then(response => {
@@ -134,7 +81,6 @@ class ResourceFormContainer extends Component {
   }
 
   handleClear(event) {
-    // event.preventDefault()
     this.setState({
       name: '',
       category_res: '0',
@@ -143,20 +89,6 @@ class ResourceFormContainer extends Component {
     })
     console.log("handleClear works");
   }
-
-  // handleFormSubmit(event) {
-  //   event.preventDefault()
-  //   let formPayload = {
-  //     resource: {
-  //       name: this.state.name,
-  //       category_res: this.state.category_res,
-  //       expire_date: this.state.expire_date,
-  //       description: this.state.description
-  //     }
-  //   };
-  //   this.props.addResource(formPayload)
-  //   this.handleClear()
-  // }
 
   render(){
     return(

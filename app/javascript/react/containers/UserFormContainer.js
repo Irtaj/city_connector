@@ -20,10 +20,6 @@ class UserFormContainer extends Component {
   this.handleTitle = this.handleTitle.bind(this);
   this.handleUsername = this.handleUsername.bind(this);
   this.handleEmail = this.handleEmail.bind(this);
-
-
-  // this.editUser = this.editUser.bind(this)
-  // this.handleFormSubmit = this.handleFormSubmit.bind(this)
   this.handleClear = this.handleClear.bind(this);
   }
 
@@ -68,56 +64,6 @@ class UserFormContainer extends Component {
     })
     console.log("handleClear works");
   }
-
-  // editUser(event){
-  //   event.preventDefault();
-  //   let formPayload = {
-  //     user: {
-  //       first_name: this.state.first_name,
-  //       last_name: this.state.last_name,
-  //       title: this.state.title,
-  //       username: this.state.username,
-  //       email: this.state.email
-  //     }
-  //     if (updatedPlayers > 0) {
-  //     fetch('/api/v1/users/#{current_user}', {
-  //       credentials: 'same-origin',
-  //       method: 'PATCH',
-  //       body: JSON.stringify(formPayload),
-  //       headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-  //     })
-  //     .then(response => {
-  //      if (response.ok) {
-  //        this.setState({
-  //          first_name: "",
-  //          last_name: "",
-  //          title: "",
-  //          username: "",
-  //          email: ""
-  //        })
-  //        this.triggerFetch()
-  //      } else {
-  //        let errorMessage = `${response.status} (${response.statusText})`,
-  //            error = new Error(errorMessage);
-  //        throw(error);
-  //      }
-  //     })
-  //     }
-  //   }
-  // }
-  //
-  // handleFormSubmit(event) {
-  //   event.preventDefault()
-  //   let formPayload = {
-  //     first_name: this.state.first_name,
-  //     last_name: this.state.last_name,
-  //     title: this.state.title,
-  //     username: this.state.username,
-  //     email: this.state.email,
-  //   }
-  //   this.props.editUser(formPayload)
-  //   this.handleClear()
-  // }
 
   render(){
     return(

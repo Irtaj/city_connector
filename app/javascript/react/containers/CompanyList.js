@@ -97,5 +97,4 @@ class CompanyList extends Component{
   }
 }
 
-
 export default CompanyList;
