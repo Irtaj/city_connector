@@ -1,7 +1,8 @@
 <div class="log-in">
   <h2>Sign up</h2>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <p><i>To access the guest account, go to the login in page and sign in with the provided credentials.</i></p>
 
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
     <%= f.label :first_name %><br />
