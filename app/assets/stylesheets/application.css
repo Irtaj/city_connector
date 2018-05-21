@@ -50,9 +50,9 @@ h1{
 /* Inner Body */
   .inner-body{
     width: auto;
-    background-image: url('city.jpg');
-    height: 100%;
-    bottom: 0px;
+    background-image: url('city2.jpg');
+    height:  100%;
+    bottom:0px;
   }
 
   h1 a{
