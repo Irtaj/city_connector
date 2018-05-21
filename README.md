@@ -22,7 +22,7 @@ City Connector is a platform for companies to connect with one another via chat 
 
 * User's Profile Page (only visible upon signing up/logging in):
     * A guest login account has already been created. 
-        Email: guest@gmail01.com
+        Email: guest001@gmail.com
         Password: cityconnector1
 
   A user has access to their user profile page, through a link on top of the homepage.
